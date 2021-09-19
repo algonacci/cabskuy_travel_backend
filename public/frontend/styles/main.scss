@@ -1,0 +1,504 @@
+// #79ccf8,"rgb(121,204,248)","lightskyblue"
+// #3574a9,"rgb(53,116,169)","steelblue"
+// #21568c,"rgb(33,86,140)","darkslateblue"
+// #3496ef,"rgb(52,150,239)","dodgerblue"
+// #071C4D,"rgb(7,28,77)","midnightblue"
+
+body {
+    background-color: #E4E6EB;
+    font-family:  sans-serif;
+    color: #21568c;
+}
+
+// Navbar
+.navbar {
+    background-color: white;
+    // margin-left: 120px;
+    // margin-right: 120px;
+}
+
+.navbar-brand {
+    img {
+        max-height: 40px;
+    }
+}
+
+.navbar-light {
+    .navbar-nav {
+        .nav-link {
+            color: #21568c;
+
+            &.active {
+                font-weight: bold;
+                color: #3574a9 !important;
+            }
+        }
+    }
+}
+
+.btn-navbar-right {
+    margin-top: -10px !important;
+    margin-bottom: -8px !important;
+    margin-right: -18px !important;
+    height: 70px;
+    border-radius: 0;
+}
+
+.btn-login {
+    background-color: #21568c;
+    color: white;
+
+    &:hover {
+        background-color: #1E3771;
+        color: white;
+    }
+}
+
+
+// Header
+header {
+    padding: 180px 0px 165px;
+    margin-top: -120px !important;
+    background-image: url('/frontend/images/header.jpg');
+    background-size: cover;
+    height: 700px;
+
+    h1, p {
+        color: white;
+    }
+
+    h1 {
+        font-family:  sans-serif;
+        font-weight: bold;
+        font-size: 50px;
+    }
+
+    p {
+        font-size: 22px;
+    }
+
+    .btn-get-started {
+        background-color: #FF9E53;
+        color: white;
+        font-weight: 600;
+
+        &:hover {
+            background-color: #f0822e;
+        color: white;
+        }
+    }
+}
+
+// Statistics
+.section-stats {
+    margin-top: -50px;
+
+
+    .stats-detail {
+        padding-top: 15px;
+        background-color: white;
+        padding-left: 40px;
+    }
+
+    h2 {
+        font-size: 30px;
+        margin-bottom: 0;
+        font-weight: 600;
+    }
+
+    p {
+        font-size: 20px;
+        font-weight: lighter;
+    }
+}
+
+// Destinasi Populer
+.section-terpopuler {
+    min-height: 540px;
+    background-color: #21568c;
+    margin-top: -50px;
+    margin-bottom: -230px;
+
+    .section-populer-heading {
+        margin-top: 150px;
+
+        h2, p {
+            color: white;
+        }
+
+        h2 {
+            font-family: sans-serif;
+            font-weight: bold;
+            font-size: 40px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+    }
+
+}
+.section-konten-populer {
+    .section-destinasi-populer {
+        .card-destinasi {
+            min-height: 380px;
+            background: #ddd;
+            color: white;
+            padding: 30px;
+            background-size: cover;
+            margin-bottom: 20px;
+       }
+
+        .lokasi-destinasi {
+            font-size: 26px;
+            color: white;
+        }
+
+        .travel-button {
+            .btn-travel-details {
+                background-color: #FF9E53;
+                color: white;
+
+                &:hover {
+                background-color: #ff8528;
+                color: white;
+                }
+            }
+        }
+   }
+}
+
+
+// Partner
+.section-networks {
+    background-color: white;
+    margin-top: -170px;
+    padding-top: 240px;
+    padding-bottom: 50px;
+
+    h2 {
+        font-family: sans-serif;
+        font-weight: bold;
+        font-size: 40px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+    img {
+        max-width: 100%;
+    }
+}
+
+// Testimonial
+
+.section-testimonial-heading {
+    background: linear-gradient(#fff 0%, #f7f6ff 100%);
+    padding-top: 50px;
+    min-height: 506px;
+
+    h2 {
+        font-family: sans-serif;
+        font-weight: bold;
+        font-size: 40px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+}
+
+.section-testimonial-content {
+    margin-top: -300px;
+    padding-bottom: 50px;
+
+    .card-testimonial {
+        padding: 40px 20px 10px;
+        border-radius: 11px;
+        margin-bottom: 20px;
+
+        .testimonial-content {
+            min-height: 380px;
+        }
+
+        h3 {
+            font-size: 22px;
+        }
+        
+        .testimonial {
+            font-weight: 200;
+            font-size: 26px;
+            color: #6e6e6e;
+        }
+
+        .trip-to {
+            font-size: 22px;
+            font-weight: normal;
+            color: #6e6e6e;
+        }
+
+        hr {
+            margin-left: -20px;
+            margin-right: -20px;
+        }
+    }
+
+    .btn-need-help {
+        background-color: #25D366;
+        color: white;
+
+         &:hover {
+        background-color: #075E54;
+        color: white;
+        }
+    }
+
+    .btn-get-started {
+        background-color: #FF9E53;
+        color: white;
+
+         &:hover {
+        background-color: #ff8528;
+        color: white;
+        }
+    }
+}
+
+// Footer
+
+.section-footer {
+    a {
+        color: #21568c;
+        text-decoration: none;
+    }
+
+    .text-gray-500 {
+        color: #6E6E6E;
+    }
+}
+
+// Section Details 
+.section-details-header {
+    min-height: 310px;
+    background: #e4e6eb;
+    margin-top: -70px;
+}
+
+.section-details-content {
+    margin-top: -150px;
+    min-height: 100vh;
+    .breadcrumb {
+        background-color: transparent;
+        padding: 0;
+        margin-bottom: 30px;
+    }
+
+    .breadcrumb-item {
+        &.active {
+            font-weight: bold;
+            color: #21568c;
+        }
+    }
+
+    .card-details {
+        padding: 30px;
+        border-radius: 11px;
+
+
+        h1 {
+            font-size: 26px;
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #b1b1b1;
+        }
+
+        h3 {
+            font-weight: 600;
+            font-size: 14px;
+            color: #21568c;
+        }
+
+        .trip-informations {
+            th {
+                font-weight: 300;
+                font-size: 16px;
+                color: #21568c;
+            }
+
+            td {
+                font-weight: 300;
+                font-size: 16px;
+                color: #b1b1b1;
+            }
+
+            .text-blue {
+                color: #21568c !important;
+                font-weight: bold;
+            }
+        }
+
+        .bank {
+            .bank-item {
+                h3 {
+                    font-size: 18px;
+                    color: #21568c;
+                    margin-bottom: 0;
+                }
+
+                p {
+                    margin-bottom: 0;
+                }
+
+                .description {
+                    margin-left: 10px;
+                    overflow: hidden;
+                    float: left;
+
+                    p {
+                        font-weight: normal;
+                        font-size: 16px;
+                        color: #21568c;
+                    }
+                }
+            }
+
+            .bank-image {
+                width: 45px;
+                height: 45px;
+                float: left !important;
+            }
+        }
+
+        .payment-instruction {
+            font-weight: 300;
+            font-size: 14;
+            color: #b1b1b1;
+        }
+
+        .disclaimer {
+            font-weight: 300;
+            font-size: 14px;
+            color: #b1b1b1;
+        }
+
+        .gj-datepicker {
+            .datepicker {
+                border-right: 0;
+            }
+        }
+
+        .btn-add-now {
+            background-color: #21568c;
+            color: white;
+
+            &:hover {
+                background-color: #1E3771;
+                color: white;
+            }
+        }
+
+        
+    }
+
+
+
+    .features {
+        margin-top: 20px;
+
+        h3 {
+            font-size: 18px;
+            color: #21568c;
+            margin-bottom: 0;
+        }
+
+        p {
+            margin-bottom: 0;
+        }
+
+        .description {
+            margin-left: 10px;
+            overflow: hidden;
+            float: left;
+        }
+
+        .features-image {
+            width: 45px;
+            height: 45px;
+            float: left;
+        }
+    }
+
+    .gallery {
+        .xzoom-container {
+            display: block;
+
+            .xzoom {
+                width: 100%;
+                box-shadow: none;
+                margin-bottom: 10px;
+            }
+
+            .xactive {
+                border: 14px solid #79ccf8;
+                box-shadow: none;
+            }
+        }
+    }
+
+    .members {
+        .member-image {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    .join-container {
+        margin-top: 25px;
+    }
+
+    .btn-join-now {
+        background-color: #FF9E53;
+        color: white;
+
+         &:hover {
+        background-color: #ff8528;
+        color: white;
+        }
+    }
+}
+
+// Success
+.section-success {
+    background-color: white;
+    height: 100vh;
+
+    h1 {
+        font-weight: 600;
+        font-size: 26px;
+        color: #21568c;
+    }
+
+    p {
+        font-weight: 300;
+        font-size: 18px;
+        color: #b1b1b1;
+    }
+
+    .btn-home-page {
+        border-radius: 4px;
+        background-color: #21568c;
+        color: white;
+
+        &:hover {
+            background-color: #1E3771;
+            color: white;
+        }
+    }
+}

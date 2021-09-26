@@ -15,7 +15,7 @@
             Temukan paket perjalanan ke seluruh daerah <br>
             di Indonesia bersama Cabskuy Travel
         </p>
-        <a href="#" class="btn btn-get-started px-4 mt-2">
+        <a href="#populer" class="btn btn-get-started px-4 mt-2">
             Cabs Kuy!
         </a>
     </header>
@@ -60,50 +60,20 @@
         <section class="section-konten-populer" id="kontenPopuler">
             <div class="container">
                 <div class="section-destinasi-populer row justify-content-center">
+                    @foreach ($items as $item)
                     <div class="col-sm-6 col-md-4 col-lg-3">
                         <div class="card-destinasi text-center d-flex flex-column"
-                            style="background-image: url('/frontend/images/danau\ toba.jpg')">
-                            <div class="lokasi-destinasi">DANAU TOBA</div>
+                            style="background-image: url('{{ $item->galleries->count() ? Storage::url($item->galleries->first()->image) : ''}}');">
+                            {{-- <div class="nama-travel">{{ $item->title }}</div> --}}
+                            <div class="lokasi-destinasi">{{ $item->location }}</div>
                             <div class="travel-button mt-auto">
-                                <a href="{{ route('detail') }}" class="btn btn-travel-details px-4">
+                                <a href="{{ route('detail', $item->slug) }}" class="btn btn-travel-details px-4">
                                     Lihat Detailnya
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">
-                        <div class="card-destinasi text-center d-flex flex-column"
-                            style="background-image: url('/frontend/images/bromo.jpg')">
-                            <div class="lokasi-destinasi">BROMO</div>
-                            <div class="travel-button mt-auto">
-                                <a href="{{ route('detail') }}" class="btn btn-travel-details px-4">
-                                    Lihat Detailnya
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">
-                        <div class="card-destinasi text-center d-flex flex-column"
-                            style="background-image: url('/frontend/images/bajo.jpg')">
-                            <div class="lokasi-destinasi">LABUHAN BAJO</div>
-                            <div class="travel-button mt-auto">
-                                <a href="{{ route('detail') }}" class="btn btn-travel-details px-4">
-                                    Lihat Detailnya
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">
-                        <div class="card-destinasi text-center d-flex flex-column"
-                            style="background-image: url('/frontend/images/bali.jpg')">
-                            <div class="lokasi-destinasi">BALI</div>
-                            <div class="travel-button mt-auto">
-                                <a href="{{ url('/detail') }}" class="btn btn-travel-details px-4">
-                                    Lihat Detailnya
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach 
                 </div>
             </div>
         </section>
@@ -163,7 +133,7 @@
                             <div class="testimonial-content">
                                 <img src="/frontend/images/testimonial 3.png" alt="User" class="mb-4 rounded-circle">
                                 <h3 class="mb-4">Shayna</h3>
-                                <p class="testimonial">“ The trip was amazing and
+                                <p class="testimonial">“ The trip was amazing.
                                     I saw something beautiful in
                                     that Island that makes me
                                     want to learn more “</p>
@@ -195,7 +165,7 @@
                         <a href="https://api.whatsapp.com/send?phone=6282125609413&text=Halo%20Admin%20Cabskuy%20Travel"
                             class="btn btn-need-help px-4 mt-4 mx-1"><i class="bi bi-whatsapp p-2"></i> Saya mau
                             nanya-nanya</a>
-                        <a href="#" class="btn btn-get-started px-5 mt-4 mx-1">Booking seat liburan</a>
+                        <a href="{{ route('register') }}" class="btn btn-get-started px-5 mt-4 mx-1">Booking seat liburan</a>
                     </div>
                 </div>
             </div>

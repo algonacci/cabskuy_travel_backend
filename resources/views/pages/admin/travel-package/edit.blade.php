@@ -63,7 +63,7 @@
                     </div>
                     <div class="form-group">
                         <label for="price">Harga</label>
-                        <input type="number" class="form-control" name="price" placeholder="Price" value="{{ $item->price }}">
+                        <input type="text" class="form-control" name="price" placeholder="Price" value="{{ $item->price }}">
                     </div>
                     <button type="submit" class="btn btn-primary btn-block">
                         Ubah

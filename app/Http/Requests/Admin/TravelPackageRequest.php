@@ -33,7 +33,7 @@ class TravelPackageRequest extends FormRequest
             'departure_date' => 'required|date',
             'duration' => 'required|max:255',
             'type' => 'required|max:255',
-            'price' => 'required|integer'
+            'price' => 'required|max:255'
         ];
     }
 }

@@ -24,73 +24,53 @@
                 <div class="row">
                     <div class="col-lg-8 pl-lg-0 py-3">
                         <div class="card card-details">
-                            <h1>Nusa Penida</h1>
-                            <p>Bali, Indonesia</p>
+                            <h1>{{ $item->title }}</h1>
+                            <p>{{ $item->location }}</p>
+                            @if ($item->galleries->count())
                             <div class="gallery">
                                 <div class="xzoom-container">
-                                    <img src="/frontend/images/penida_thumb.jpg" alt="Nusa Penida" class="xzoom"
-                                        id="xzoom-default" xoriginal="/frontend/images/penida_thumb.jpg">
+                                    <img src="{{ Storage::url($item->galleries->first()->image) }}" alt="Nusa Penida" class="xzoom"
+                                        id="xzoom-default" xoriginal="{{ Storage::url($item->galleries->first()->image) }}">
                                 </div>
                                 <div class="xzoom-thumbs">
-                                    <a href="/frontend/images/penida_thumb.jpg">
-                                        <img src="/frontend/images/penida_thumb.jpg" class="xzoom-gallery" width="128"
-                                            xpreview="/frontend/images/penida_thumb.jpg">
+                                    @foreach ($item->galleries as $gallery)
+                                    <a href="{{ Storage::url($gallery->image) }}">
+                                        <img src="{{ Storage::url($gallery->image) }}" class="xzoom-gallery" width="128"
+                                            xpreview="{{ Storage::url($gallery->image) }}">
                                     </a>
-                                    <a href="/frontend/images/penida1.jpg">
-                                        <img src="/frontend/images/penida1.jpg" class="xzoom-gallery" width="128"
-                                            xpreview="/frontend/images/penida1.jpg">
-                                    </a>
-                                    <a href="/frontend/images/penida2.jpg">
-                                        <img src="/frontend/images/penida2.jpg" class="xzoom-gallery" width="128"
-                                            xpreview="/frontend/images/penida2.jpg">
-                                    </a>
-                                    <a href="/frontend/images/penida3.jpg">
-                                        <img src="/frontend/images/penida3.jpg" class="xzoom-gallery" width="128"
-                                            xpreview="/frontend/images/penida3.jpg">
-                                    </a>
+                                    @endforeach
                                 </div>
                             </div>
+                            @endif
                             <h2>Tentang Wisata</h2>
                             <p>
-                                Nusa Penida merupakan salah satu pulau cantik di Bali yang menawarkan pengalaman
-                                berlibur yang berkesan. Nusa Penida terletak di selatan pulau bali dan berdampingan
-                                dengan dua pulau terkenal lainnya, yaitu Nusa Ceningan dan Nusa Lembongan. Ketiganya
-                                memiliki keindahan panorama yang menakjubkan, hanya saja Nusa Penida berukuran lebih
-                                luas dibandingkan kedua pulau lainnya.
-                                <br>
-                                <br>
-                                Di Nusa Penida juga diadakan berbagai festival budaya. Salah satunya adalah “Festival
-                                Nusa Penida” yang diadakan satu tahun sekali, yang di dalamnya juga terdapat tari Rejang
-                                Dewa yang melibatkan penari perempuan sekitar 1.000 penari dan tari baris jangkang yang
-                                melibatkan penari pria. Selain itu, ada juga berbagai kegiatan menarik lainnya seperti
-                                lomba jukung atau perahu nelayan,kongser musik, kebersihan pantai, pameran kerajinan
-                                tenun dll. Di kawasan ini, Anda juga dapat menyaksikan penanaman terumbu karang.
+                                {!! $item->about !!}
                             </p>
                             <div class="features row">
                                 <div class="col-md-4">
                                     <div class="description">
-                                        <img src="/frontend/images/ic_event.png" class="features-image" alt="">
+                                        <img src="{{ url('frontend/images/ic_event.png') }}" class="features-image" alt="Icon Event">
                                         <div class="description">
                                             <h3>Acara Menarik</h3>
-                                            <p>Tari Kecak</p>
+                                            <p>{{ $item->featured_event }}</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-4 border-start">
                                     <div class="description">
-                                        <img src="/frontend/images/ic_bahasa.png" class="features-image" alt="">
+                                        <img src="{{ url('frontend/images/ic_bahasa.png') }}" class="features-image" alt="Icon Bahasa">
                                         <div class="description">
                                             <h3>Bahasa</h3>
-                                            <p>Indonesia</p>
+                                            <p>{{ $item->language }}</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-4 border-start">
                                     <div class="description">
-                                        <img src="/frontend/images/ic_makanan.png" class="features-image" alt="">
+                                        <img src="{{ url('frontend/images/ic_makanan.png') }}" class="features-image" alt="Icon Makanan">
                                         <div class="description">
                                             <h3>Makanan</h3>
-                                            <p>Makanan Lokal</p>
+                                            <p>{{ $item->foods }}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -113,25 +93,36 @@
                             <table class="trip-information">
                                 <tr>
                                     <th width="50%">Keberangkatan</th>
-                                    <td width="50%" class="text-end">22 December 2021</td>
+                                    <td width="50%" class="text-end">{{ \Carbon\Carbon::create($item->departure_date)->format('n F Y') }}</td>
                                 </tr>
                                 <tr>
                                     <th width="50%">Durasi</th>
-                                    <td width="50%" class="text-end">4 Hari 3 Malam</td>
+                                    <td width="50%" class="text-end">{{ $item->duration }}</td>
                                 </tr>
                                 <tr>
                                     <th width="50%">Sifat Trip</th>
-                                    <td width="50%" class="text-end">Open Trip</td>
+                                    <td width="50%" class="text-end">{{ $item->type }}</td>
                                 </tr>
                                 <tr>
                                     <th width="50%">Harga</th>
-                                    <td width="50%" class="text-end">Rp500.000 / orang</td>
+                                    <td width="50%" class="text-end">Rp{{ $item->price }}/orang</td>
                                 </tr>
                             </table>
                         </div>
                         <div class="join-container d-grid gap-2 rounded-circle">
-                            <a href="{{ route('checkout') }}" class="btn btn-block btn-join-now py-2 text-center">Pesan
-                                Sekarang</a>
+                            @auth
+                                <form action="{{ route('checkout_process', $item->id) }}" method="POST">
+                                    @csrf
+                                    <button class="btn btn-block btn-join-now mt-3 py-2" type="submit">
+                                        Gabung Trip
+                                    </button>
+                                </form>
+                            @endauth
+                            @guest
+                            <a href="{{ route('login') }}" class="btn btn-block btn-join-now py-2 text-center">
+                                Masuk atau Daftar Dulu
+                            </a>
+                            @endguest
                         </div>
                     </div>
                 </div>
